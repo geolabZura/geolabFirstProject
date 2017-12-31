@@ -11,6 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', ['as'=>'login', 'uses'=>'UserController@index']);
+Route::post('login', ['as'=>'login', 'uses'=>'UserController@login']);
+
+Route::group(['prefix'=>'admin', 'middleware'=>'admin'], function(){
+    Route::get('/', function(){
+        return view('admin.index');
+    });
 });
+

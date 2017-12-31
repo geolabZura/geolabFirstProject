@@ -60,32 +60,72 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 9);
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
 /******/ })
 /************************************************************************/
-/******/ ({
+/******/ ([
+/* 0 */
+/***/ (function(module, exports, __webpack_require__) {
 
-/***/ 10:
-/***/ (function(module, exports) {
+__webpack_require__(1);
+module.exports = __webpack_require__(2);
 
-throw new Error("Module build failed: Error: ENOENT: no such file or directory, open '/var/www/geolabFirstProject/resources/assets/js/app.js'");
 
 /***/ }),
+/* 1 */
+/***/ (function(module, exports) {
 
-/***/ 42:
+$(document).ready(function () {
+
+    var mainUsableObject = function mainUsableObject() {
+        this.ajaxGet = function (url, callback) {
+            $.ajax({
+                url: url,
+                type: 'get',
+                success: callback
+            });
+        };
+
+        this.ajaxPost = function (url, data, callback) {
+            $.ajax({
+                url: url,
+                type: 'post',
+                data: data,
+                processData: false,
+                contentType: false,
+                success: callback
+            });
+        };
+    };
+
+    var ajaxObject = function ajaxObject() {
+        this.ajaxObject = new mainUsableObject();
+        this.loginForm = $('#login');
+
+        this.getLoginError = function () {
+            var formData = new FormData(this.loginForm[0]);
+            this.ajaxObject.ajaxPost('/login', formData, function (data) {
+                if (typeof data.error !== "undefined") {
+                    console.log("error " + data.error);
+                } else {
+                    console.log("yes " + data.success);
+                }
+            });
+        };
+    };
+
+    var AjaxObj = new ajaxObject();
+    $('#login').submit(function (event) {
+        event.preventDefault();
+        AjaxObj.getLoginError();
+    });
+});
+
+/***/ }),
+/* 2 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
-/***/ }),
-
-/***/ 9:
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(10);
-module.exports = __webpack_require__(42);
-
-
 /***/ })
-
-/******/ });
+/******/ ]);
