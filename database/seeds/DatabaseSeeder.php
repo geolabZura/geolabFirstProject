@@ -13,14 +13,60 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('users')->insert([
+        $user = [
             'name' => 'root',
             'email' => 'root@gmail.com',
             'password' => bcrypt('secret'),
             'role'=>1,
             'created_at'=>Carbon::now(),
             'updated_at'=>Carbon::now()
-        ]);
+        ];
+
+        DB::table('users')->insert($user);
+
+        $gender = [
+            [
+                'name'=>'mail',
+                'created_at'=>Carbon::now(),
+                'updated_at'=>Carbon::now()
+            ],
+            [
+                'name'=>'femail',
+                'created_at'=>Carbon::now(),
+                'updated_at'=>Carbon::now()
+            ]
+        ];
+
+        foreach($gender as $item) {
+            DB::table('gender')->insert($item);
+        }
+
+        $newsletters = [
+            [
+                'name'=>'receive images',
+                'created_at'=>Carbon::now(),
+                'updated_at'=>Carbon::now()
+            ],
+            [
+                'name'=>'receive promotions',
+                'created_at'=>Carbon::now(),
+                'updated_at'=>Carbon::now()
+            ],
+            [
+                'name'=>'receive updates',
+                'created_at'=>Carbon::now(),
+                'updated_at'=>Carbon::now()
+            ],
+            [
+                'name'=>'receive job offers',
+                'created_at'=>Carbon::now(),
+                'updated_at'=>Carbon::now()
+            ]
+        ];
+
+        foreach($newsletters as $newsletter){
+            DB::table('newsletter')->insert($newsletter);
+        }
 
         // $this->call(UsersTableSeeder::class);
     }

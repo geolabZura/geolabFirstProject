@@ -11,12 +11,27 @@
 |
 */
 
-Route::get('/', ['as'=>'login', 'uses'=>'UserController@index']);
-Route::post('login', ['as'=>'login', 'uses'=>'UserController@login']);
+Route::get('/', ['as'=>'login', 'uses'=>'HomeController@index']);
+
+Route::post('/login', ['as'=>'login', 'uses'=>'UserController@login']);
+Route::post('/subscribe', ['as'=>'subscribe', 'uses'=>'SubscriberController@getSubscribers']);
 
 Route::group(['prefix'=>'admin', 'middleware'=>'admin'], function(){
-    Route::get('/', function(){
-        return view('admin.index');
-    });
+    Route::get('/', ['as'=>'admin.statistic', 'uses'=>'AdminController@index']);
+
+    Route::get('/slider', ['as'=>'admin.slider', 'uses'=>'SliderController@index']);
+    Route::post('/slider/upload', ['as'=>'admin.slider.upload', 'uses'=>'SliderController@upload']);
+    Route::post('/slider/delete/{id}', ['as'=>'admin.slider.delete', 'uses'=>'SliderController@delete']);
+
+    Route::get('/slider/edit/{id}', ['as'=>'admin.slider.edit', 'uses'=>'SliderController@editSlider']);
+    Route::post('/slider/edit/{id}', ['as'=>'admin.slide.edit', 'uses'=>'SliderController@edit']);
+
+    Route::get('/service', ['as'=>'admin.service', 'uses'=>'ServiceController@index']);
+    Route::post('/service/upload', ['as'=>'admin.service.upload', 'uses'=>'ServiceController@upload']);
+    Route::post('/service/delete/{id}', ['as'=>'admin.slider.delete', 'uses'=>'ServiceController@delete']);
+
+    Route::get('/service/edit/{id}', ['as'=>'admin.service.edit', 'uses'=>'ServiceController@editService']);
+    Route::post('/service/edit/{id}', ['as'=>'admin.service.edit', 'uses'=>'ServiceController@edit']);
+
 });
 

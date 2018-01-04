@@ -9,10 +9,6 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    public function index(){
-        return view('main.login');
-    }
-
     public function login(Request $request){
         $validation = Validator::make($request->all(), [
             'email'=>'required|email',
@@ -27,7 +23,7 @@ class UserController extends Controller
            return response()->json(['error'=>'This User Do Not Exist!']);
         }
 
-        return response()->json(['success'=>'/']);
-
+        return response()->json(['success'=>'/admin']);
     }
+
 }

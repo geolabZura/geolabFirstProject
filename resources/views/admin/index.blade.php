@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
 <head>
     <meta charset="utf-8">
@@ -8,17 +8,15 @@
     <meta name="viewport" content="width=device-width" />
 
     <link rel="icon" type="image/png" href="{{asset('favicon.ico')}}">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" type="text/css" href="{{asset('/css/animate.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('/css/bootstrap.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('/css/light-bootstrap-dashboard.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('/css/pe-icon-7-stroke.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('/css/site.css')}}">
 </head>
 <body>
     <div class="wrapper">
-
-        {{--@if(auth()->check())--}}
-            {{--{{auth()->user()->email}}--}}
-        {{--@endif--}}
 
         @include('admin.partials.sidebar')
 
@@ -39,10 +37,13 @@
             @include('admin.partials.footer')
 
         </div>
+
     </div>
 </body>
 
 <script src="{{asset('/js/jquery-3.2.1.min.js')}}"></script>
+<script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+<script src="{{asset('/js/bootstrap.min.js')}}"></script>
 <script src="{{asset('/js/site.js')}}"></script>
 
 </html>

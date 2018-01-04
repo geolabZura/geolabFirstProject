@@ -7,10 +7,22 @@
         </div>
 
         <ul class="nav">
-            <li class="active">
-                <a href="">
+            <li class="{{Request::is('admin') ? 'active' : ''}}">
+                <a href="{{route('admin.statistic')}}">
                     <i class="pe-7s-graph"></i>
                     <p>Dashboard</p>
+                </a>
+            </li>
+            <li class="{{Request::is('admin/slider') ? 'active' : ''}}">
+                <a href="{{route('admin.slider')}}">
+                    <i class="pe-7s-photo"></i>
+                    <p>Slider</p>
+                </a>
+            </li>
+            <li class="{{Request::is('admin/service') ? 'active' : ''}}">
+                <a href="{{route('admin.service')}}">
+                    <i class="pe-7s-photo"></i>
+                    <p>Service</p>
                 </a>
             </li>
         </ul>

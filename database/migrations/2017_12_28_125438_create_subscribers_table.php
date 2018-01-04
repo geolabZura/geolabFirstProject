@@ -21,11 +21,9 @@ class CreateSubscribersTable extends Migration
                 $table->string('subject');
                 $table->text('text');
                 $table->integer('gender_id')->unsigned();
-                $table->integer('newsletter_id')->unsigned();
                 $table->timestamps();
 
                 $table->foreign('gender_id')->references('id')->on('gender');
-                $table->foreign('newsletter_id')->references('id')->on('newsletter');
             });
         }
     }
