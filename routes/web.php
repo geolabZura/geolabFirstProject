@@ -11,10 +11,13 @@
 |
 */
 
-Route::get('/', ['as'=>'login', 'uses'=>'HomeController@index']);
+Route::get('/', ['as'=>'main', 'uses'=>'HomeController@index']);
 
 Route::post('/login', ['as'=>'login', 'uses'=>'UserController@login']);
 Route::post('/subscribe', ['as'=>'subscribe', 'uses'=>'SubscriberController@getSubscribers']);
+
+
+Route::get('/logout', ['as'=>'logout', 'uses'=>'UserController@logout']);
 
 Route::group(['prefix'=>'admin', 'middleware'=>'admin'], function(){
     Route::get('/', ['as'=>'admin.statistic', 'uses'=>'AdminController@index']);
@@ -43,5 +46,6 @@ Route::group(['prefix'=>'admin', 'middleware'=>'admin'], function(){
 
 
     Route::get('/subscriber', ['as'=>'admin.subscriber', 'uses'=>'SubscriberController@index']);
+
 });
 

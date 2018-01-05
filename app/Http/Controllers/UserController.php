@@ -26,4 +26,9 @@ class UserController extends Controller
         return response()->json(['success'=>'/admin']);
     }
 
+    public function logout(){
+        Auth::logout();
+        return redirect(route('main'));
+    }
+
 }

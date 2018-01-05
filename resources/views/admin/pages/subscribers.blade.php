@@ -31,7 +31,11 @@
                                 <td>{{$subscriber->subject}}</td>
                                 <td>{{$subscriber->text}}</td>
                                 <td>{{$subscriber->genders->name}}</td>
-                                {{--<td>{{$subscriber}}</td>--}}
+                                <td>
+                                    @foreach($subscriber->newsletters as $newsletter)
+                                        {{$newsletter->name }},
+                                    @endforeach
+                                </td>
                                 <td>{{$subscriber->created_at}}</td>
                             </tr>
                         @endforeach

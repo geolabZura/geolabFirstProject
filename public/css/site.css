@@ -35,3 +35,40 @@ form.admin_panel .admin_panel_image {
   border: 1px solid darkgrey !important;
 }
 
+form.admin_panel {
+  padding: 50px 20px;
+}
+
+form.admin_panel .btn-file {
+  position: relative;
+  overflow: hidden;
+}
+
+form.admin_panel .btn-file input[type=file] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  font-size: 100px;
+  text-align: right;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  outline: none;
+  background: white;
+  cursor: inherit;
+  display: block;
+}
+
+form.admin_panel .admin_panel_date {
+  border: 1px solid darkgrey !important;
+}
+
+form.admin_panel .admin_panel_title {
+  border: 1px solid darkgrey !important;
+}
+
+form.admin_panel .admin_panel_image {
+  border: 1px solid darkgrey !important;
+}
+

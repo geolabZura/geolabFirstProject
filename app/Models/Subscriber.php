@@ -9,7 +9,7 @@ class Subscriber extends Model
     protected $table = "subscribers";
 
     protected $fillable = [
-        "name", "email", "subject", "text", "gender_id", "newsletter_id", "created_at", "update_at"
+        "name", "email", "subject", "text", "gender_id", "created_at", "update_at"
     ];
 
     public function genders(){

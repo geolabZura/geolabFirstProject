@@ -9,10 +9,7 @@ class Gender extends Model
     protected $table = 'gender';
 
     protected $fillable = [
-        'name', 'created_at', 'update_at'
+        'subscriber_id','name', 'created_at', 'update_at'
     ];
 
-//    public function newsletters(){
-//        return $this->belongsTo(NewsLetter::class);
-//    }
 }
