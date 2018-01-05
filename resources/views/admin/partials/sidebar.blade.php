@@ -25,6 +25,18 @@
                     <p>Service</p>
                 </a>
             </li>
+            <li class="{{Request::is('admin/social') ? 'active' : ''}}">
+                <a href="{{route('admin.social')}}">
+                    <i class="pe-7s-photo"></i>
+                    <p>Social</p>
+                </a>
+            </li>
+            <li class="{{Request::is('admin/subscriber') ? 'active' : ''}}">
+                <a href="{{route('admin.subscriber')}}">
+                    <i class="pe-7s-photo"></i>
+                    <p>Subscribers</p>
+                </a>
+            </li>
         </ul>
 
     </div>

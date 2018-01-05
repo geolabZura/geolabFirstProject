@@ -11,4 +11,8 @@ class Gender extends Model
     protected $fillable = [
         'name', 'created_at', 'update_at'
     ];
+
+//    public function newsletters(){
+//        return $this->belongsTo(NewsLetter::class);
+//    }
 }

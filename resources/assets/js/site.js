@@ -38,6 +38,9 @@ $(document).ready(function(){
         this.serviceUpload = $('#service_admin_update');
         this.serviceEdit = $('#service_admin_edit');
 
+        this.socialUpload = $('#social_admin_update');
+        this.socialEdit = $('#social_admin_edit');
+
         this.getLoginError = function(){
             var formData = new FormData(this.loginForm[0]);
 
@@ -182,6 +185,57 @@ $(document).ready(function(){
                 }
             });
         };
+
+
+        this.uploadeSocialItem = function(){
+            var formData = new FormData(this.socialUpload[0]);
+
+            this.ajaxObject.ajaxPost('/admin/social/upload', formData, function (data) {
+                if(typeof data.error !== 'undefined') {
+                    $('.error').remove();
+                    $('.success').remove();
+
+                    for (var error in data.error) {
+                        if (error === 'image') {
+                            $("[name='image']").parent().parent().parent().after("<p class='error' style='color: red;'>" + data.error[error] + "</p>");
+                        } else {
+                            $("[name=" + error + "]").after("<p class='error' style='color: red;'>" + data.error[error] + "</p>");
+                        }
+                    }
+                }
+                else {
+                    $('.error').remove();
+                    alert("Item Successfully Uploaded!");
+                    location.reload();
+                }
+            })
+        };
+
+        this.editSocialItem = function(){
+            var formData = new FormData(this.socialEdit[0]);
+            var id = $(this.socialEdit).data('id');
+            console.log(id);
+            formData.append('id', id);
+
+            this.ajaxObject.ajaxPost('/admin/social/edit/'+id, formData, function(data){
+                if(typeof data.error !== 'undefined'){
+                    $('.error').remove();
+                    $('.success').remove();
+
+                    for(var error in data.error) {
+                        if(error === 'image') {
+                            $("[name='image']").parent().parent().parent().after("<p class='error' style='color: red;'>" + data.error[error] + "</p>");
+                        }else{
+                            $("[name=" + error + "]").after("<p class='error' style='color: red;'>" + data.error[error] + "</p>");
+                        }
+                    }
+                }else{
+                    $('.error').remove();
+                    $('.success').remove();
+                    $('button.btn-success').after("<p class='success' style='color: green;'>"+ data.success + "</p>")
+                }
+            }, this);
+        };
     };
 
     var AjaxObj = new ajaxObject();
@@ -257,4 +311,17 @@ $(document).ready(function(){
         });
     })();
 
+    App.socialUpload = (function(){
+        $('#social_admin_update').submit(function(event){
+            event.preventDefault();
+            AjaxObj.uploadeSocialItem();
+        })
+    })();
+
+    App.socialEdit = (function(){
+        $('#social_admin_edit').submit(function (event) {
+            event.preventDefault();
+            AjaxObj.editSocialItem();
+        });
+    })();
 });

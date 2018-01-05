@@ -23,7 +23,8 @@ class CreateSubscribersTable extends Migration
                 $table->integer('gender_id')->unsigned();
                 $table->timestamps();
 
-                $table->foreign('gender_id')->references('id')->on('gender');
+                $table->foreign('gender_id')->references('id')
+                    ->on('gender');
             });
         }
     }

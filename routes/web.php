@@ -26,6 +26,7 @@ Route::group(['prefix'=>'admin', 'middleware'=>'admin'], function(){
     Route::get('/slider/edit/{id}', ['as'=>'admin.slider.edit', 'uses'=>'SliderController@editSlider']);
     Route::post('/slider/edit/{id}', ['as'=>'admin.slide.edit', 'uses'=>'SliderController@edit']);
 
+
     Route::get('/service', ['as'=>'admin.service', 'uses'=>'ServiceController@index']);
     Route::post('/service/upload', ['as'=>'admin.service.upload', 'uses'=>'ServiceController@upload']);
     Route::post('/service/delete/{id}', ['as'=>'admin.slider.delete', 'uses'=>'ServiceController@delete']);
@@ -33,5 +34,14 @@ Route::group(['prefix'=>'admin', 'middleware'=>'admin'], function(){
     Route::get('/service/edit/{id}', ['as'=>'admin.service.edit', 'uses'=>'ServiceController@editService']);
     Route::post('/service/edit/{id}', ['as'=>'admin.service.edit', 'uses'=>'ServiceController@edit']);
 
+
+    Route::get('/social', ['as'=>'admin.social', 'uses'=>'SocialController@index']);
+    Route::post('/social/upload', ['as'=>'admin.social.upload', 'uses'=>'SocialController@update']);
+
+    Route::get('/social/edit/{id}', ['as'=>'admin.social.edit', 'uses'=>'SocialController@editSocial']);
+    Route::post('/social/edit/{id}', ['as'=>'admin.social.edit', 'uses'=>'SocialController@edit']);
+
+
+    Route::get('/subscriber', ['as'=>'admin.subscriber', 'uses'=>'SubscriberController@index']);
 });
 

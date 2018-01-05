@@ -13,7 +13,7 @@ class Subscriber extends Model
     ];
 
     public function genders(){
-        return $this->belongsTo(Gender::class);
+        return $this->hasOne(Gender::class);
     }
 
     public function newsletters(){

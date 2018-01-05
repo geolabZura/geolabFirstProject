@@ -15,6 +15,11 @@ class SubscriberController extends Controller
         $this->subscribers = new Subscriber();
     }
 
+    public function index(){
+        $data['subscribers'] = $this->subscribers->all();
+        return view('admin.pages.subscribers', $data);
+    }
+
     public function getSubscribers(Request $request){
         $message = [
             'name.required'=>'please write your name',

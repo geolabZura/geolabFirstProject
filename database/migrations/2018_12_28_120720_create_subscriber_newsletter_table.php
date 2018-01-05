@@ -16,8 +16,8 @@ class CreateSubscriberNewsletterTable extends Migration
         if(!Schema::hasTable('subscriber_newsletter')) {
             Schema::create('subscriber_newsletter', function (Blueprint $table) {
 
-                $table->integer('subscriber_id')->unsigned()->nullable();;
-                $table->integer('newsletter_id')->unsigned()->nullable();;
+                $table->integer('subscriber_id')->unsigned()->nullable();
+                $table->integer('newsletter_id')->unsigned()->nullable();
 
                 $table->foreign('subscriber_id')->references('id')
                     ->on('subscribers')
