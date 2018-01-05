@@ -30,7 +30,7 @@
                                 <td>{{$subscriber->email}}</td>
                                 <td>{{$subscriber->subject}}</td>
                                 <td>{{$subscriber->text}}</td>
-                                <td>{{$subscriber->genders}}</td>
+                                <td>{{$subscriber->genders->name}}</td>
                                 {{--<td>{{$subscriber}}</td>--}}
                                 <td>{{$subscriber->created_at}}</td>
                             </tr>

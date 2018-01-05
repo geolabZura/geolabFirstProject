@@ -15,7 +15,7 @@ class CreateGenderTable extends Migration
     {
         if(!Schema::hasTable('gender')) {
             Schema::create('gender', function (Blueprint $table) {
-                $table->increments('id');
+                $table->increments('subscriber_id');
                 $table->string('name');
                 $table->timestamps();
             });

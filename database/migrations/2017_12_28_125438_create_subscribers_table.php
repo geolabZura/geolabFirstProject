@@ -20,11 +20,12 @@ class CreateSubscribersTable extends Migration
                 $table->string('email');
                 $table->string('subject');
                 $table->text('text');
-                $table->integer('gender_id')->unsigned();
+                $table->integer('gender_id')->unsigned()->nullable();
                 $table->timestamps();
 
-                $table->foreign('gender_id')->references('id')
-                    ->on('gender');
+                $table->foreign('gender_id')->references('subscriber_id')
+                    ->on('gender')
+                    ->onDelete('cascade');
             });
         }
     }
