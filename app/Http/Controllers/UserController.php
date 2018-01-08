@@ -20,7 +20,7 @@ class UserController extends Controller
         }
 
         if(!Auth::attempt(['email'=>$request->email, 'password'=>$request->password])){
-           return response()->json(['error'=>'This User Do Not Exist!']);
+           return response()->json(['error'=>['last'=>'This User Do Not Exist!']]);
         }
 
         return response()->json(['success'=>'/admin']);

@@ -1,4 +1,4 @@
-@extends('welcome')
+@extends('main.welcome')
 @section('content')
 
     <form action="" method="post" id="login">

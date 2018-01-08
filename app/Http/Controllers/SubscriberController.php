@@ -25,7 +25,7 @@ class SubscriberController extends Controller
             'name.required'=>'please write your name',
             'email.required'=>'please write your email',
             'subject.required'=>'please write subject',
-            'text.required'=>'please write text',
+            'textarea.required'=>'please write text',
             'gender.required'=>'please choose your gender'
         ];
 
@@ -33,7 +33,7 @@ class SubscriberController extends Controller
             'name'=>'required',
             'email'=>'required',
             'subject'=>'required',
-            'text'=>'required',
+            'textarea'=>'required',
             'gender'=>'required|in:1,2'
         ], $message);
 
@@ -45,7 +45,7 @@ class SubscriberController extends Controller
                 'name'=>$request->name,
                 'email'=>$request->email,
                 'subject'=>$request->subject,
-                'text'=>$request->text,
+                'text'=>$request->textarea,
                 'gender_id'=>$request->gender
             ]);
 

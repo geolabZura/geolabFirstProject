@@ -60,10 +60,12 @@ class SliderController extends Controller
     }
 
     public function upload(Request $request){
+
+        ini_set('memory_limit','256M');
         $validator = Validator::make($request->all(), [
             'image'=>'required|image|mimes:jpeg,png,jpg',
             'title'=>'required|min:3|max:30',
-            'date'=>'required'
+            'date' =>'required'
         ]);
 
 

@@ -1,0 +1,503 @@
+*{
+    margin:0;
+    padding:0;
+}
+.green{
+    background-color: green;
+}
+
+.coral{
+    background-color: coral;
+}
+.red{
+    background-color: red;
+}
+.mist{
+    background-color: mistyrose;
+}
+
+
+
+
+.navbar{
+    /*background-color: rgba(200,100,100,0.5);*/
+    position:absolute;
+    width:100%;
+    z-index:10;
+    max-width:100%;
+    transition: 1s;
+    text-align: center;
+    padding: 0 ;
+
+}
+.logo{
+    fill: #fff;
+    width: 21em;
+    transition: 1s;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+.navbar .burger, .login{
+    background-color: transparent;
+    outline: none;
+    border:none;
+    position: absolute;
+    right: 20px;
+    top: 40%;
+    transform: translateY(-50%);
+}
+.navbar .login{
+    right: 80px;
+}
+.navbarHeader{
+    height: 120px;
+    width: 100%;
+    position: relative;
+    text-align: left;
+}
+.Bar{
+    color: white;
+    font-size: 30px;
+}
+#navbar .burger .fa-times {
+    display: none;
+}
+
+#navbar.open {
+    background-color: rgba(255,255,255,0.8);
+}
+#navbar.longer{
+    background-color: rgba(255,255,255,0.8);
+}
+#navbar.open .burger .fa-times{
+    display: block;
+    color: #FF0000;
+}
+
+#navbar.open .burger .fa-bars{
+    display: none;
+
+}
+
+#navbar.open .logo {
+    fill: red;
+}
+#navbar.longer .logo {
+    fill: red;
+}
+.autoriseForm{
+    position: relative;
+}
+.autoriseForm input{
+    display: block;
+    height: 30px;
+    outline: none;
+    border: 0;
+    width: 200px;
+    padding: 20px;
+}
+.autoriseForm input[type=submit]{
+    padding: 0;
+    background-color: lightgray;
+}
+.autoriseForm label{
+    font-size: 13px;
+    color: red;
+    text-align: left;
+
+}
+#collapsibleNavbar {
+    height: 0;
+    overflow: hidden;
+    width: 100%;
+    text-align: left;
+    font-family: 'Roboto Condensed', sans-serif;
+    padding-left: 20%;
+    transition: 1s;
+    position: relative;
+    padding-top: 6%;
+}
+#collapsibleNavbar ul li{
+    font-size: 64px;
+}
+#collapsibleNavbar ul li a{
+    color: #000;
+}
+#navbar.open #collapsibleNavbar {
+    height: calc(100vh - 120px);
+}
+#navbar.longer #autorizeNavbar{
+    height: calc(100vh - 120px);
+}
+#autorizeNavbar{
+    height: 0;
+    overflow: hidden;
+    transition: 1s;
+    position: relative;
+    left: 50%;
+    transform:translateX(-50%);
+}
+.fitScreen{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-color: red;
+    overflow: hidden;
+}
+.MyControll{
+    background-color:#fff;
+    opacity: 1;
+    height: calc(70px * 2);
+    width: 70px;
+    position: absolute;
+    top: 50vh;
+}
+.MyArrow{
+    color: #FF0000;
+    font-size: 28px;
+    font-weight: 200;
+}
+.RightArrow , .LeftArrow{
+    height: calc(70px * 2);
+    width: 70px;
+}
+.RightArrow {
+    border-bottom-right-radius: calc(70px * 2);
+    border-top-right-radius: calc(70px * 2);
+}
+.LeftArrow {
+    border-bottom-left-radius:calc(70px * 2);;
+    border-top-left-radius:calc(70px * 2);;
+}
+.carousel-caption{
+    right: 2%;
+    bottom: 0%;
+}
+.sliderCaption{
+    font-size: 25px;
+}
+.SlideImg{
+    height: 100vh;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+
+
+.ServiceHeader{
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 40px;
+    color: #000;
+    padding: 30px 0;
+}
+.serviceIcon{
+    height:100px;
+    fill: red;
+}
+.one-tride{
+    background-color: #EBE8DE;
+    box-sizing: border-box;
+    padding: 30px 0;
+}
+.one-tride .serviceIcon{
+    padding: 10px 0 0 0;
+}
+.one-tride  h5{
+    padding: 60px 0 10px 0;
+    font-family: "Roboto Condensed";
+    font-size: 35px;
+}
+
+.backgroundSection{
+    background-image:url(../images/mountine.svg);
+    height: auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:/*contain, */cover;
+    background-position: /*top, */bottom;
+    margin-top: 50px;
+    text-align: center;
+}
+.backgroundSection img{
+    width:80%;
+    height: auto;
+}
+.RoadSection{
+    background-image:url(../images/road.svg);
+    height: 100px;
+    background-repeat: repeat-x;
+    background-position: left;
+    position: relative;
+    width: 100%;
+    /*overflow: hidden;*/
+    /*background-color: coral;*/
+}
+.Bus{
+    width: 180px;
+    position: absolute;
+    top: -20px;
+    right: 0;
+    animation-name: BusRide;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+.myIframe{
+    width: 100%;
+    height:450px;
+    outline: none;
+    border:none;
+}
+.ContactSection{
+    position: relative;
+}
+.ContactDiv{
+    display: inline-block;
+    font-family: 'Roboto Condensed',sans-serif;
+    color:#000;
+    width: 75%;
+    position: absolute;
+    top: 23vh;
+    left: 10vw;
+    overflow: hidden;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+}
+.LeftContactDiv ,.RightContactDiv{
+    flex: 1;
+}
+.LeftContactDiv{
+    /*width: 258px;*/
+    background-color: #EBE8DE;
+    order:0;
+    max-width:31%;
+}
+.ContactDiv .RightContactDiv{
+    /*width: 412px;*/
+    max-width: 69%;
+    order:1;
+    position: relative;
+
+
+    padding-left: 30px;
+    padding-bottom: 70px;
+    border:1px solid #DFDFDF;
+    background-color: #fff;
+}
+.ContactDiv .LeftContactDiv .ContactHeader{
+    padding: 25px 30px;
+    font-size: 30px;
+}
+.ContactDiv .LeftContactDiv .SocialText{
+    padding: 60px 65px 0;
+    font-size: 30px;
+}
+.ContactDiv .LeftContactDiv .SocialText{
+    padding: 150px 75px 0;
+}
+.ContactDiv ul{
+    text-align: center;
+    position: relative;
+}
+.ContactDiv ul li{
+    position: relative;
+    list-style-type: none;
+    display: inline-block;
+    border:1px solid #000;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    text-align: center;
+    margin: 5px;
+}
+.ContactDiv ul li a{
+    color: #000;
+}
+.ContactDiv ul li a i{
+    margin:0 auto;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: translateY(-50%);
+}
+.RightContactDiv .ContactHeader{
+    font-size: 30px;
+    padding-top: 20px;
+    letter-spacing: 5px;
+}
+/*Form*/
+
+.RightContactDiv .ContactOne{
+    display: inline-block;
+    position: relative;
+}
+.RightContactDiv .ContactOne input, textarea{
+    display: block;
+    padding: 0 10px;
+    font-family: 'Roboto Condensed',sans-serif;
+    font-size: 16px;
+    width: 200px;
+    outline:none;
+    border:none;
+    margin-top:30px;
+    background-color: #F2F2F2;
+}
+.RightContactDiv .ContactOne input[name=name]{
+    margin-top:0;
+}
+.RightContactDiv .ContactOne input{
+    height: 40px;
+}
+.RightContactDiv .ContactOne label{
+    display: inline-block;
+    position: absolute;
+    margin: 0;
+    color: red;
+    font-family: 'Roboto',sans-serif;
+    font-size: 13px;
+}
+.RightContactDiv .ContactOne textarea{
+    resize: none;
+    height: 100px;
+}
+
+
+
+.RightContactDiv .ContactSecond{
+    display: inline-block;
+    position: absolute;
+    left: 20vw;
+    font-family: 'Roboto Condensed';
+    font-weight: 400;
+}
+.RightContactDiv .ContactSecond .ErrorLabel{
+    display: inline-block;
+    margin: 0;
+    color: red;
+    font-family: 'Roboto',sans-serif;
+    font-size: 13px;
+}
+
+.Radiocontainer, .checkcontainer {
+    display: inline-block;
+    position: relative;
+    padding-left: 35px;
+    cursor: pointer;
+    font-size: 22px;
+
+    font-family: "Roboto",sans-serif;
+    font-size: 18px;
+    padding-left: 29px;
+    padding-right: 20px;
+
+}
+.Radiocontainer input,.checkcontainer input{
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    display: none;
+}
+.radiomark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    border:1px solid #000;
+    box-sizing: border-box;
+}
+.Radiocontainer:hover input ~ .radiomark,
+.checkcontainer:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+.checkcontainer input:checked ~ .checkmark,
+.Radiocontainer input:checked ~ .radiomark {
+    background-color: transparent;
+}
+
+.checkmark:after,
+.radiomark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+.checkcontainer input:checked ~ .checkmark:after,
+.Radiocontainer input:checked ~ .radiomark:after  {
+    display: block;
+}
+.Radiocontainer .radiomark:after {
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0px;
+    right: 0;
+    bottom: 0;
+    margin:0 auto;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background-color: #000;
+}
+.ContactSecond .checkboxHeader{
+    padding-top: 30%;
+    letter-spacing: 2px;
+    font-size: 16px;
+}
+.checkmark {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: transparent;
+    border: 1px solid #000;
+    box-sizing: border-box;
+}
+.checkcontainer .checkmark:after {
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 10px;
+    height: 15px;
+    border: solid #000;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+#Send{
+    position: absolute;
+    bottom: 15px;
+    right: 30px;
+    border: none;
+    outline: none;
+    width: 70px;
+    height: 30px;
+    background-color: #000;
+    color: #fff;
+}
+.Success{
+    color: #39B54A;
+    margin-top: 10px;
+    font-size: 13px;
+    position: absolute;
+    bottom: 10px;
+    left: 30px;
+
+}
+
+.footer{
+    padding-top: 160px;
+    padding-bottom: 50px;
+}
+.footerContent {
+    font-family: 'Roboto',sans-serif;
+    font-size: 16px;
+    background-color: #fff;
+}
+@keyframes BusRide{
+    from{right: 0px;}
+    to{ right: 100vw }
+}

@@ -12,4 +12,7 @@ class Gender extends Model
         'subscriber_id','name', 'created_at', 'update_at'
     ];
 
+    public function subscribers(){
+        return $this->belongsTo(Subscriber::class);
+    }
 }

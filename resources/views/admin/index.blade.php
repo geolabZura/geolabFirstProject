@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width" />
 
     <link rel="icon" type="image/png" href="{{asset('favicon.ico')}}">
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('/css/jquery-ui.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('/css/animate.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('/css/bootstrap.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('/css/light-bootstrap-dashboard.css')}}">
@@ -42,7 +42,7 @@
 </body>
 
 <script src="{{asset('/js/jquery-3.2.1.min.js')}}"></script>
-<script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+<script src="{{asset('/js/jquery-ui.js')}}"></script>
 <script src="{{asset('/js/bootstrap.min.js')}}"></script>
 <script src="{{asset('/js/site.js')}}"></script>
 

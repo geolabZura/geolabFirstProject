@@ -123,9 +123,18 @@ $(document).ready(function () {
 
             this.ajaxObject.ajaxPost('/login', formData, function (data) {
                 if (typeof data.error !== "undefined") {
-                    console.log("error ", data.error);
+                    $('#login .sub_errors').text('');
+                    $('#login .sub_success').text('');
+                    console.log(data.error);
+                    for (var error in data.error) {
+                        $("#login label[for=" + error + "]").html("<span class='sub_errors'>" + data.error[error] + "!</span>");
+                    }
+                    if (typeof data.error.last !== 'undefined') {
+                        $("#login label[for='password']").html("<span class='sub_errors'>" + data.error.last + "!</span>");
+                    }
+                    $("#login input[name='password']").val('');
                 } else {
-                    console.log("yes ", data.success);
+                    location.href = data.success;
                 }
             });
         };
@@ -135,9 +144,15 @@ $(document).ready(function () {
 
             this.ajaxObject.ajaxPost('/subscribe', formData, function (data) {
                 if (typeof data.error !== 'undefined') {
-                    console.log("error ", data.error);
+                    $('#subscriber .sub_errors').text('');
+                    $('#subscriber .sub_success').text('');
+                    for (var error in data.error) {
+                        $("#subscriber label[for=" + error + "]").html("<span class='sub_errors'>" + data.error[error] + "!</span>");
+                    }
                 } else {
-                    console.log("yes ", data.success);
+                    $('#subscriber')[0].reset();
+                    $('#subscriber .sub_errors').text('');
+                    $("#subscriber label[class='Success']").html("<span class='sub_success'>Thank you for your intereset for us, your message has been sent!</span>");
                 }
             });
         };

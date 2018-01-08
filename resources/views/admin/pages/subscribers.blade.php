@@ -30,7 +30,8 @@
                                 <td>{{$subscriber->email}}</td>
                                 <td>{{$subscriber->subject}}</td>
                                 <td>{{$subscriber->text}}</td>
-                                <td>{{$subscriber->genders->name}}</td>
+                                <td>{{\App\Models\Gender::where('subscriber_id', $subscriber->gender_id)->first()->name}}</td>
+
                                 <td>
                                     @foreach($subscriber->newsletters as $newsletter)
                                         {{$newsletter->name }},
