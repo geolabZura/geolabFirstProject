@@ -46,6 +46,21 @@
         $('#navbar').toggleClass('longer');
     });
 
+    jQuery(document).ready(function($) {
+        var alterClass = function() {
+            var ww = document.body.clientWidth;
+            if (ww < 400) {
+                $('.ContactSection').removeClass('container');
+            } else if (ww >= 981) {
+                $('.ContactSection').addClass('container');
+            }
+        };
+        $(window).resize(function(){
+            alterClass();
+        });
+        //Fire it when the page first loads:
+        alterClass();
+    });
 </script>
 <script src="{{asset('/js/jquery-3.2.1.min.js')}}"></script>
 <script src="{{asset('/js/jquery-ui.js')}}"></script>

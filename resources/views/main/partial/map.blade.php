@@ -1,13 +1,4 @@
 <div class="ContactDiv text-center clearfix ">
-    <div class="LeftContactDiv red">
-        <h2 class="text-uppercase text-left ContactHeader">Contact information</h2>
-        <h4 class="text-center SocialText">click to view</h4>
-        <ul>
-            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-        </ul>
-    </div>
     <div class="RightContactDiv text-left ">
         <h2 class="text-uppercase  ContactHeader">get in touch</h2>
         <form action="" method="post" id="subscriber">
@@ -54,6 +45,19 @@
             <label class="Success" for="Send"></label>
             <input type="submit" id="Send" value="send">
         </form>
+    </div>
+    <div class="LeftContactDiv red">
+        <h2 class="text-uppercase text-left ContactHeader">Contact information</h2>
+        <h4 class="text-center SocialText">click to view</h4>
+        <ul>
+            {{--@if(!empty($socials))--}}
+                {{--@foreach($socials as $social)--}}
+                    {{--<li><a href="#"><i class="fa fa-google-plus"></i></a></li>--}}
+                    {{--<li><a href="#"><i class="fa fa-facebook"></i></a></li>--}}
+                    {{--<li><a href="#"><i class="fa fa-twitter"></i></a></li>--}}
+                {{--@endforeach--}}
+            {{--@endif--}}
+        </ul>
     </div>
 </div>
 <iframe class="myIframe" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2978.116234888417!2d44.7852849!3d41.7180106!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xced15c2c7992ceb5!2sGeoLab!5e0!3m2!1sen!2sge!4v1515257436691" allowfullscreen></iframe>
