@@ -3,15 +3,25 @@
 ვებგვერდი
 
 iNSTALLATION:
+
 	1)git clone https://github.com/geolabZura/geolabFirstProject.git
+	
 	2)გადავიდეთ შესაბამის დირექტორიაში სადაც ფაილი გადმოწერეთ(linux: cd /var/www/geolabFirstProject; windows: cd ../../xamp/htdocs/geolabFirstProject)
+	
 	3)composer install
+	
 	4)cp .env.example .env(კოპირება გავუკეთოთ .env.example ფაილს და გადავაკეთოთ .env ჩავწეროთ ბაზის სახელი რუთი და პაროლი )
+	
 	5)php artisan key:generate
+	
 	6)php artisan migrate
+	
 	7)php artisan db:seed
+	
 	8)php artisan serve
+	
 	9)მაილი ადმინის: root პაროლი: root@gmail.com
+	
 
 FRONT-END:
 
