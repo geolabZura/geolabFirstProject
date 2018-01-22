@@ -208,7 +208,7 @@
 }
 
 .backgroundSection{
-    background-image:url(images/mountine.svg);
+    background-image:url(../images/mountine.svg);
     height: auto;
     background-repeat: no-repeat;
     background-position: center;
@@ -222,7 +222,7 @@
     height: auto; 
 }
 .RoadSection{
-    background-image:url(images/road.svg);
+    background-image:url(../images/road.svg);
     height: 100px;
     background-repeat: repeat-x;
     background-position: left;
